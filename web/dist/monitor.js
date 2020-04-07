@@ -12,7 +12,6 @@
         };
         var walker = document.createTreeWalker(elem, NodeFilter.SHOW_TEXT, accept, false);
         var n = walker.nextNode();
-        console.log('n', n);
         if (!n) {
             return a;
         }

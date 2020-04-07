@@ -11,7 +11,6 @@
     };
     const walker: TreeWalker = document.createTreeWalker(elem, NodeFilter.SHOW_TEXT, accept, false);
     let n = walker.nextNode();
-    console.log('n', n)
     if (!n) {
       return a;
     }
