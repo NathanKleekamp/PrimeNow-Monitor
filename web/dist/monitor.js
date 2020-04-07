@@ -1,4 +1,8 @@
 "use strict";
+function playSound() {
+    var sound = new Audio("https://bbpublic.s3.amazonaws.com/turkey-gobble-call.mp3");
+    sound.play();
+}
 function textNodesUnder(elem) {
     var a = [];
     var accept = {
@@ -38,10 +42,6 @@ function getTextNodes(selector) {
     var deliveryTimeForm = document.querySelector(selector);
     var result = [];
     if (!deliveryTimeForm) {
-        if (document.body.id !== "desktop-internal-error") {
-            console.log("No delivery form. Reloading...");
-            location.reload();
-        }
         return result;
     }
     var nodes = textNodesUnder(deliveryTimeForm);

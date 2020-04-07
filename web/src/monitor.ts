@@ -40,10 +40,6 @@ function getTextNodes(selector: string): string[] {
   let result: string[] = [];
 
   if (!deliveryTimeForm) {
-    if (document.body.id !== "desktop-internal-error") {
-      console.log("No delivery form. Reloading...");
-      location.reload();
-    }
     return result;
   }
 
