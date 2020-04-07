@@ -1,0 +1,1 @@
+(function(){var a=PaymentsPortal2.modules.define;a("components/DefaultComponent",["component"],function(a){return a.extend({initialize:function(){window.alert("DefaultComponent initialize!")}})})})();
