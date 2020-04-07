@@ -27,18 +27,19 @@ function reload(): void {
 }
 
 function getTextNodes(selector: string): string[] {
-  const deliveryTimeForm: HTMLElement = document.querySelector(selector) || document.createElement("form");
+  const deliveryTimeForm: HTMLElement | null = document.querySelector(selector);
   let result: string[] = [];
 
-  if (!deliveryTimeForm.childElementCount) {
+  if (!deliveryTimeForm) {
     console.log("Reloading...");
     location.reload();
+    return result;
   }
 
   const nodes: Node[] = textNodesUnder(deliveryTimeForm);
   nodes.forEach((n: Node) => {
-    if (typeof n.textContent === "string") {
-      result.push(n!.textContent!.trim());
+    if (n?.textContent && typeof n.textContent === "string") {
+      result.push(n.textContent.trim());
     }
   });
 

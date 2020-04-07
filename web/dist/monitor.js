@@ -27,15 +27,16 @@ function reload() {
     location.reload();
 }
 function getTextNodes(selector) {
-    var deliveryTimeForm = document.querySelector(selector) || document.createElement("form");
+    var deliveryTimeForm = document.querySelector(selector);
     var result = [];
-    if (!deliveryTimeForm.childElementCount) {
+    if (!deliveryTimeForm) {
         console.log("Reloading...");
         location.reload();
+        return result;
     }
     var nodes = textNodesUnder(deliveryTimeForm);
     nodes.forEach(function (n) {
-        if (typeof n.textContent === "string") {
+        if ((n === null || n === void 0 ? void 0 : n.textContent) && typeof n.textContent === "string") {
             result.push(n.textContent.trim());
         }
     });
