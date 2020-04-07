@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "Amazon PrimeNow Monitor",
+  "version": "1.0.0-dev",
+  "description": "Monitors and notifies you when a delivery window becomes available",
+  "content_scripts": [
+    {
+      "matches": ["*://primenow.amazon.com/checkout/*"],
+      "js": ["web/dist/monitor.js"]
+    }
+  ]
+}

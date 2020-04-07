@@ -1,0 +1,16 @@
+{
+  "name": "primenow-addon",
+  "version": "1.0.0",
+  "main": "web/dist/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^13.11.0",
+    "tsc": "^1.20150623.0",
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "tsc": "tsc",
+    "build:web": "tsc --project web/tsconfig.json",
+    "build:app": "tsc --project app/tsconfig.json"
+  }
+}
