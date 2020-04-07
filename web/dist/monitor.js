@@ -23,9 +23,6 @@ function getRandomMs(minMs, maxMs) {
     if (maxMs === void 0) { maxMs = 5000; }
     return Math.random() * (maxMs - minMs) + minMs;
 }
-function reload() {
-    location.reload();
-}
 function getTextNodes(selector) {
     var deliveryTimeForm = document.querySelector(selector);
     var result = [];
@@ -45,7 +42,6 @@ function getTextNodes(selector) {
 var nonEmptyText = getTextNodes("#delivery-slot-form");
 var NO_DELIVERY = "no delivery windows available";
 if (nonEmptyText.length && containsSubstring(nonEmptyText, NO_DELIVERY)) {
-    console.log("Reloading...");
     setTimeout(function () { return location.reload(); }, getRandomMs());
 }
 else {

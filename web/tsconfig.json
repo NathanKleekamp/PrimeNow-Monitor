@@ -15,12 +15,13 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "moduleResolution": "node",
+    "module": "esnext",
     "baseUrl": "./",
+    "outDir": "./dist",
     "paths": {},
     "typeRoots": [],
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "outFile": "./dist/monitor.js",
     "typeRoots": ["../node_modules/@types"],
     "lib": ["es2016", "dom"]
   }

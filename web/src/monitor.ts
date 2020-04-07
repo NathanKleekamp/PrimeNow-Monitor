@@ -22,10 +22,6 @@ function getRandomMs(minMs = 2000, maxMs = 5000) {
   return Math.random() * (maxMs - minMs) + minMs;
 }
 
-function reload(): void {
-  location.reload();
-}
-
 function getTextNodes(selector: string): string[] {
   const deliveryTimeForm: HTMLElement | null = document.querySelector(selector);
   let result: string[] = [];
@@ -50,7 +46,6 @@ const nonEmptyText = getTextNodes("#delivery-slot-form");
 const NO_DELIVERY = "no delivery windows available";
 
 if (nonEmptyText.length && containsSubstring(nonEmptyText, NO_DELIVERY)) {
-  console.log("Reloading...");
   setTimeout(() => location.reload(), getRandomMs());
 } else {
   console.log("order");
